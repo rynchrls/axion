@@ -1,6 +1,6 @@
 # Axion Discord AI Bot 🤖
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.101.0-lightgrey?logo=fastapi)
 ![Discord](https://img.shields.io/badge/Discord-Bot-7289DA?logo=discord)
 ![SQLite3](https://img.shields.io/badge/SQLite3-Lightgrey?logo=sqlite)
@@ -23,7 +23,7 @@ Axion is a versatile Discord AI bot designed to elevate your server experience. 
 ## 🛠️ Technologies Used
 
 - **Discord Developer Portal** – Bot registration and management.
-- **Python 3.11** – Core programming language.
+- **Python 3.13** – Core programming language.
 - **FastAPI** – API backend to handle requests.
 - **Ollama** – Large language model for AI-driven responses.
 - **SQLite3** – Minimal and efficient local database.
