@@ -43,6 +43,3 @@ class ContextManager:
 
 
 db = ContextManager()
-
-# db.insert_context(user="ryan", content="hi", role="user")
-# print(db.get_contexts_by_user(user="ryan"))
