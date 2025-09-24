@@ -1,7 +1,7 @@
 # Axion Discord AI Bot 🤖
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.101.0-lightgrey?logo=fastapi)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.117.1-lightgrey?logo=fastapi)
 ![Discord](https://img.shields.io/badge/Discord-Bot-7289DA?logo=discord)
 ![SQLite3](https://img.shields.io/badge/SQLite3-Lightgrey?logo=sqlite)
 ![Ollama](https://img.shields.io/badge/Ollama-AI-orange)
