@@ -2,12 +2,14 @@ from ollama import chat
 from ollama import ChatResponse
 from ollama import chat
 import re
+from ..db.context import getUserContext, saveUserContext
 
 
 class MyBot:
     gen_model = "deepseek-v3.1:671b-cloud"
 
-    def generalized(self, message: str) -> str:
+    def generalized(self, message: str, user: str) -> str:
+        context = getUserContext(user)
         response = chat(
             model=self.gen_model,
             messages=[
@@ -19,14 +21,20 @@ class MyBot:
 - Format code in Markdown blocks.  
 - Keep all responses under 1900 characters (including text + formatting).  
 Decline unsafe or inappropriate requests.
-
-    """,
-                },
+""",
+                }
+            ]
+            + context
+            + [
                 {
                     "role": "user",
                     "content": message,
-                },
+                }
             ],
+        )
+        saveUserContext(username=user, role="user", content=message)
+        saveUserContext(
+            username=user, role="assistant", content=response["message"]["content"]
         )
         return response["message"]["content"]
 
