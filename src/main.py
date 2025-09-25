@@ -42,8 +42,19 @@ app.add_middleware(
 )
 async def define(interaction: discord.Interaction, message: str):
     print("Info Mode Activated")
-    query = bot.informative(message=message)
-    await interaction.response.send_message(query[:1999])
+
+    # Prevent timeout (acknowledge immediately)
+    await interaction.response.defer()
+
+    try:
+        # Call your Axion coding function
+        query = bot.informative(message=message)
+
+        # Send follow-up (safely under 2000 chars for Discord)
+        await interaction.followup.send(query[:1900])
+    except Exception as e:
+        # Always reply, even on error
+        await interaction.followup.send(f"❌ Error: {str(e)}")
 
 
 # Slash command: /g-code
