@@ -85,8 +85,8 @@ async def on_message(message):
             return
 
         await message.channel.send("💡 Thinking...")
-        reply = bot.generalized(query)
-        await message.channel.send(reply[:1999])  # Discord message limit ~2000 chars
+        reply = bot.generalized(query, user=message.author.name)
+        await message.channel.send(reply[:1999])  # type: ignore  # Discord message limit ~2000 chars
         print("✅ Response sent.")
 
 
